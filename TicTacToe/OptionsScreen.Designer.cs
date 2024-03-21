@@ -1,0 +1,133 @@
+﻿using System.Runtime.InteropServices;
+
+namespace TicTacToe
+{
+    partial class OptionsScreen
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeft,
+            int nTop,
+            int nRight,
+            int nBottom,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
+
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsScreen));
+            textBox1 = new TextBox();
+            SubmitOptions = new Button();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(218, 27);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(188, 23);
+            textBox1.TabIndex = 0;
+            textBox1.Text = "9";
+            textBox1.TextChanged += textBox1_TextChanged_1;
+            textBox1.KeyPress += textBox1_KeyPress;
+            // 
+            // SubmitOptions
+            // 
+            SubmitOptions.BackColor = Color.White;
+            SubmitOptions.Cursor = Cursors.Hand;
+            SubmitOptions.FlatAppearance.BorderSize = 0;
+            SubmitOptions.FlatAppearance.MouseOverBackColor = Color.FromArgb(226, 190, 0);
+            SubmitOptions.FlatStyle = FlatStyle.Flat;
+            SubmitOptions.Font = new Font("Franklin Gothic Medium", 11F, FontStyle.Bold);
+            SubmitOptions.ForeColor = SystemColors.ControlText;
+            SubmitOptions.Location = new Point(48, 360);
+            SubmitOptions.Name = "SubmitOptions";
+            SubmitOptions.Size = new Size(314, 56);
+            SubmitOptions.TabIndex = 1;
+            SubmitOptions.Text = "Submit";
+            SubmitOptions.UseVisualStyleBackColor = false;
+            SubmitOptions.Click += SubmitOptions_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.tic__tac_toe_;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(420, 449);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(218, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(171, 14);
+            label1.TabIndex = 4;
+            label1.Text = "Length of the game table";
+            // 
+            // OptionsScreen
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(90, 30, 118);
+            ClientSize = new Size(418, 448);
+            Controls.Add(label1);
+            Controls.Add(SubmitOptions);
+            Controls.Add(textBox1);
+            Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
+            Name = "OptionsScreen";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Options";
+            FormClosed += CloseOptionsScreen;
+            Load += OptionsScreen_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private TextBox textBox1;
+        private Button SubmitOptions;
+        private PictureBox pictureBox1;
+        private Label label1;
+    }
+}
