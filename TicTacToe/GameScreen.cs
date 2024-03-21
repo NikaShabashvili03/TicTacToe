@@ -271,6 +271,7 @@ namespace TicTacToe
             resetGameBtn.Left = (panel.Width / 2) - 25;
             resetGameBtn.Top = panel.Height - 75;
             resetGameBtn.Click += ResetGameBtn_Click;
+            resetGameBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 30, 118);
 
             resetGameBtn.BackColor = Color.Transparent;
             resetGameBtn.BackgroundImage = Properties.Resources.icons8_reset_100;

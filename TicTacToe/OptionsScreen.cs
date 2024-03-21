@@ -34,6 +34,9 @@ namespace TicTacToe
 
         private void SubmitOptions_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "" || Int32.Parse(textBox1.Text) < 9) { 
+                return; 
+            }
             GameScreen gameScreen = new GameScreen();
             gameScreen.setTableSize(tableSize);
             gameScreen.Show();
