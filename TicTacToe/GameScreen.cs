@@ -179,11 +179,11 @@ namespace TicTacToe
         {
             System.Diagnostics.Process.Start(new ProcessStartInfo
             {
-                FileName = "https://github.com/NikaShabashvili03",
+                FileName = "https://nikashabashvili-portfolio.vercel.app/",
                 UseShellExecute = true
             });
         }
-        private void initialCreator()
+        private void InitialCreator()
         {
             Button creator = new Button();
             creator.Width = 100;
@@ -258,7 +258,7 @@ namespace TicTacToe
             moveIndicator.Left = 25;
             moveIndicator.Top = 15;
             moveIndicator.BackColor = Color.White;
-            moveIndicator.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, moveIndicator.Width, moveIndicator.Height, 25, 25));
+            moveIndicator.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, moveIndicator.Width, moveIndicator.Height, 5, 5));
             panel.Controls.Add(moveIndicator);
 
             // initial Stats
@@ -304,7 +304,7 @@ namespace TicTacToe
             initialLogo();
 
             // Initial Creator
-            initialCreator();
+            InitialCreator();
 
         }
         private void GameScreenClose(object sender, FormClosedEventArgs e)
