@@ -18,12 +18,13 @@ namespace TicTacToe
             InitializeComponent();
         }
 
+        Form1 form = new Form1();
+        GameScreen gameScreen = new GameScreen();
         static private double tableSize;
 
         private void CloseOptionsScreen(object sender, FormClosedEventArgs e)
         {
             this.Hide();
-            Form1 form = new Form1();
             form.Show();
         }
 
@@ -34,10 +35,10 @@ namespace TicTacToe
 
         private void SubmitOptions_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || Int32.Parse(textBox1.Text) < 9) { 
-                return; 
+            if (textBox1.Text == "" || Int32.Parse(textBox1.Text) < 9)
+            {
+                return;
             }
-            GameScreen gameScreen = new GameScreen();
             gameScreen.setTableSize(tableSize);
             gameScreen.Show();
             this.Hide();
@@ -45,12 +46,18 @@ namespace TicTacToe
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            if(textBox1.Text != "") tableSize = Int32.Parse(textBox1.Text);
+            if (textBox1.Text != "") tableSize = Int32.Parse(textBox1.Text);
         }
 
         private void OptionsScreen_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BackToMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            form.Show();
         }
     }
 }

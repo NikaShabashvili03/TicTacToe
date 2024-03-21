@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using TicTacToe.Properties;
 
 namespace TicTacToe
 {
     public partial class GameScreen : Form
     {
+
+
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -161,15 +164,16 @@ namespace TicTacToe
             PDraw.Controls.Add(DrawStats);
         }
 
-        private void initialLogo()
+        private void InitialLogo()
         {
             PictureBox tictactoe = new PictureBox();
             tictactoe.BackgroundImage = Properties.Resources.tic__tac_toe_;
             tictactoe.BackgroundImageLayout = ImageLayout.Stretch;
-            tictactoe.Left = 0;
-            tictactoe.Top = this.Height - 320;
+            tictactoe.Left = 350 + panel.Width  - 5;
+            //tictactoe.Top = panel.Height + panel.Top - tictactoe.Height - 25;
             tictactoe.Name = "TicTacToeLogo";
-            tictactoe.Size = new Size(282, 282);
+            tictactoe.Size = new Size(300, 300);
+            tictactoe.Top = (panel.Top + panel.Height) - tictactoe.Height - 25;
             tictactoe.TabIndex = 1;
             tictactoe.TabStop = false;
             Controls.Add(tictactoe);
@@ -203,7 +207,7 @@ namespace TicTacToe
             Controls.Add(creator);
         }
 
-        private void initialButtons()
+        private void InitialButtons()
         {
             // Initial Buttons
             for (int i = 0; i < tableSize; i++)
@@ -225,6 +229,8 @@ namespace TicTacToe
                     buttons[i, j].Left = (buttons[i, j].Width + 3) * i + 375;
                     buttons[i, j].Top = (buttons[i, j].Height + 3) * j + 240;
                     buttons[i, j].TabIndex = 10;
+                    //buttons[i, j].BackgroundImage = Properties.Resources.tacback;
+                    //buttons[i, j].BackgroundImageLayout = ImageLayout.Stretch;
                     buttons[i, j].FlatAppearance.BorderSize = 0;
                     buttons[i, j].Cursor = Cursors.Hand;
                     buttons[i, j].FlatStyle = FlatStyle.Flat;
@@ -236,7 +242,16 @@ namespace TicTacToe
             }
         }
 
-        private void initialPanel()
+        private void InitialBackground()
+        {
+            PictureBox bg = new PictureBox();
+            bg.BackgroundImage = Properties.Resources.playful_tic_tac_toe_free_vector__1_;
+            bg.BackgroundImageLayout = ImageLayout.Stretch;
+            bg.BackColor = Color.Transparent;
+            bg.Dock = DockStyle.Fill;
+            Controls.Add(bg);
+        }
+        private void InitialPanel()
         {
             // Initial GamePanel bg
             panel.Width = (100 * tableSize) + 50 + 3 * tableSize;
@@ -283,6 +298,8 @@ namespace TicTacToe
             resetGameBtn.TabIndex = 0;
             resetGameBtn.Cursor = Cursors.Hand;
             resetGameBtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, resetGameBtn.Width, resetGameBtn.Height, 25, 25));
+
+
             panel.Controls.Add(resetGameBtn);
         }
 
@@ -295,16 +312,20 @@ namespace TicTacToe
         {
 
             // Initial Buttons
-            initialButtons();
+            InitialButtons();
 
             // Initial Panel && Stats in Panel
-            initialPanel();
+            InitialPanel();
 
-            // Initial Logo
-            initialLogo();
 
             // Initial Creator
             InitialCreator();
+
+            // Initial Logo
+            InitialLogo();
+
+            // Initial Background
+            InitialBackground();
 
         }
         private void GameScreenClose(object sender, FormClosedEventArgs e)
@@ -325,7 +346,7 @@ namespace TicTacToe
             }
 
             movesCount++;
-            btn.Font = new Font("KNIGHT WARRIOR", 71.99999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn.Font = new Font("KNIGHT WARRIOR", 60F, FontStyle.Bold, GraphicsUnit.Point, 0);
 
             if (playerXTurn == true)
             {

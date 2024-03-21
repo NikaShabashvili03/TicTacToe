@@ -55,7 +55,7 @@
             startGameBtn.FlatAppearance.MouseDownBackColor = Color.White;
             startGameBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(188, 219, 249);
             startGameBtn.FlatStyle = FlatStyle.Flat;
-            startGameBtn.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            startGameBtn.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             startGameBtn.ForeColor = SystemColors.ControlText;
             startGameBtn.Location = new Point(48, 360);
             startGameBtn.Name = "startGameBtn";
@@ -97,6 +97,7 @@
             Controls.Add(optionsBtn);
             Controls.Add(startGameBtn);
             Controls.Add(TicTacLogo);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;

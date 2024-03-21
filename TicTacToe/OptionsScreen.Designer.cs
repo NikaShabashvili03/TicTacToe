@@ -47,16 +47,16 @@ namespace TicTacToe
             SubmitOptions = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            BackToMenu = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(218, 27);
+            textBox1.Location = new Point(218, 26);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(188, 23);
             textBox1.TabIndex = 0;
-            textBox1.Text = "9";
             textBox1.TextChanged += textBox1_TextChanged_1;
             textBox1.KeyPress += textBox1_KeyPress;
             // 
@@ -80,9 +80,11 @@ namespace TicTacToe
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.tic__tac_toe_;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(420, 449);
+            pictureBox1.Size = new Size(418, 448);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
@@ -98,16 +100,40 @@ namespace TicTacToe
             label1.TabIndex = 4;
             label1.Text = "Length of the game table";
             // 
+            // BackToMenu
+            // 
+            BackToMenu.BackColor = Color.Transparent;
+            BackToMenu.BackgroundImage = Properties.Resources.backarrow;
+            BackToMenu.BackgroundImageLayout = ImageLayout.Stretch;
+            BackToMenu.Cursor = Cursors.Hand;
+            BackToMenu.DialogResult = DialogResult.No;
+            BackToMenu.FlatAppearance.BorderColor = Color.FromArgb(90, 30, 118);
+            BackToMenu.FlatAppearance.BorderSize = 0;
+            BackToMenu.FlatAppearance.MouseDownBackColor = Color.FromArgb(90, 30, 118);
+            BackToMenu.FlatAppearance.MouseOverBackColor = Color.FromArgb(90, 30, 118);
+            BackToMenu.FlatStyle = FlatStyle.Flat;
+            BackToMenu.ForeColor = Color.Transparent;
+            BackToMenu.Location = new Point(368, 369);
+            BackToMenu.Name = "BackToMenu";
+            BackToMenu.RightToLeft = RightToLeft.No;
+            BackToMenu.Size = new Size(40, 39);
+            BackToMenu.TabIndex = 5;
+            BackToMenu.TextImageRelation = TextImageRelation.ImageAboveText;
+            BackToMenu.UseVisualStyleBackColor = false;
+            BackToMenu.Click += BackToMenu_Click;
+            // 
             // OptionsScreen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(90, 30, 118);
             ClientSize = new Size(418, 448);
+            Controls.Add(BackToMenu);
             Controls.Add(label1);
             Controls.Add(SubmitOptions);
             Controls.Add(textBox1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
@@ -129,5 +155,6 @@ namespace TicTacToe
         private Button SubmitOptions;
         private PictureBox pictureBox1;
         private Label label1;
+        private Button BackToMenu;
     }
 }
