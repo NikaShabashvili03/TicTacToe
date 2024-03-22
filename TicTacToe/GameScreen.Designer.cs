@@ -43,7 +43,6 @@
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "GameScreen";
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Tic Tac Toe";
             FormClosed += GameScreenClose;

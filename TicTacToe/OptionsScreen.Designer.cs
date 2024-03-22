@@ -139,7 +139,6 @@ namespace TicTacToe
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "OptionsScreen";
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Options";
             FormClosed += CloseOptionsScreen;
